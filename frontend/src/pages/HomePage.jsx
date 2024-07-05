@@ -13,7 +13,7 @@ const HomePage = () => {
 		try {
 			
 			const res = await fetch(
-				`/api/recipes/${searchQuery}`
+				`http://localhost:5000/api/recipes/${searchQuery}`
 			);
 			const data = await res.json();
 			setRecipes(data);
