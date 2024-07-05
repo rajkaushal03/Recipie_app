@@ -11,15 +11,12 @@ const HomePage = () => {
 		setLoading(true);
 		setRecipes([]);
 		try {
-			// const res = await fetch(
-			// 	`https://api.edamam.com/api/recipes/v2/?app_id=${APP_ID}&app_key=${APP_KEY}&q=${searchQuery}&type=public`
-			// );
+			
 			const res = await fetch(
 				`http://localhost:5000/api/recipes/${searchQuery}`
 			);
 			const data = await res.json();
 			setRecipes(data);
-			console.log(data);
 		} catch (error) {
 			console.log(error.message);
 		} finally {
