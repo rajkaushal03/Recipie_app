@@ -8,8 +8,8 @@ dotenv.config();
 
 const router = express.Router();
 
-const APP_ID =59768561;
-const APP_KEY = "fa0480d96d66a4932822dd87ef7a197c";
+const APP_ID =process.env.VITE_APP_ID;
+const APP_KEY = process.env.VITE_APP_KEY;
 
 const fetchRecipes = async (req, res) => {
   const { searchQuery } = req.params;
